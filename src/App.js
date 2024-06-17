@@ -58,7 +58,6 @@ useEffect(() => {
         ref={searchImput}
       />
 
-
 <input className='inputsubmit' type="submit" value="Submit"/>
     </form>
     <div className='filters'>
