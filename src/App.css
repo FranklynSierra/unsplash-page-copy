@@ -1,38 +1,288 @@
-.App {
-  text-align: center;
+.App{
+  width: 100%;
+  margin: auto;
+  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filters{
   display: flex;
-  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  justify-content: space-between;
   align-items: center;
+}
+.filters div{
+  font-size: 1.2rem;
+  color: #aaa;
+  padding: 20px;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #262626;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .5s;
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #262626;
+    border-bottom: 2px solid #262626;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .3s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    transform: scale(0);
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    &:after {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+}
+.filters div:hover{
+  
+  color: #000;
+  margin-top: -10px;
+  transition: 1s;
+  
+}
+.logoimg{
+ width: 90px;
+ height: 80px;
+
+}
+.search{
+  display: flex;
+  
+  align-items: center;
+
+}
+ .inputsearch{
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  margin: 5px ;
+  background-color: #eee;
+  font-size: 1.2rem;
+
+}
+.inputsubmit{
+  border: none;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+}
+.imagenes{
+
+columns: 3;
+padding: 16px;
+column-gap: 32px;
+}
+
+.imageContainer{
+ border-radius: 4px;
+ width:auto;
+ height: auto;
+ margin-bottom: 32px;
+ animation: reveal linear both;
+animation-timeline:view() ;
+animation-range: entry 20% cover 30%;
+}
+
+.imagen{
+  width: 100%;
+  height: 100%;
+  border-radius:10px ;
+  
+
+  
+
+}
+
+.buttonDowload{
+ 
+  text-align: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: none;
+  font-size: 1.5rem;
+  background: #000;
+  color: #fff;
+  width: 180px;
+  height: 50px;
+  padding: auto;
+  margin: 20px;
+  border-radius: 20px;
+  cursor:pointer;
+  
+  
+}
+.ContainbuttonPage{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonPagereverse{
+  width: 100%;
+  padding: 20px;
+  
+  margin: 5px;
+  border: none;
+   border-radius: 50px;
+
+  background: #aaa;
+  cursor: pointer;
+  
+  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.buttonPagereverse span{
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+  
+ }
+ .buttonPagereverse::after{
+  content: '';
+  width: 100%;
+  
+ 
+  position: absolute; 
+  z-index: 1;
+top: 0;
+right: calc(-100% - 80px);
+
+border-top: 70px solid red;
+border-left: 70px solid transparent;
+transition: .3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.buttonPage{
+  width: 100%;
+  padding: 20px;
+  
+  margin: 5px;
+  border: none;
+   border-radius: 50px;
+
+  background: #aaa;
+  cursor: pointer;
+  
+  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
+ 
+}
+.buttonPage span{
+ position: relative;
+ z-index: 2;
+ transition: .3s ease all;
+ 
+}
+.buttonPage::after{
+  content: '';
+  width: 100%;
+  
+ 
+  position: absolute; 
+  z-index: 1;
+top: 0;
+left: calc(-100% - 80px);
+
+border-bottom: 70px solid rgb(0, 102, 255);
+border-right: 70px solid transparent;
+transition: .3s ease-in-out;
+}
+
+/* .buttonPage:active{
+  
+  border-radius: 50px;
+ 
+
+  background: #ddd;
+  cursor: pointer;
+
+} */
+
+@keyframes reveal{
+  from{
+    opacity: 0;
+    translate: 0 100px;
+    scale:.5;
+    transform: rotate(10deg);
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    transform: rotate(0);
   }
+}
+
+@media (max-width:900px) {
+ .imagenes{
+  columns:1;
+ }
+ .filters{
+  flex-direction: column;
+ }
+ 
+}
+@media(hover:hover){
+  .buttonPage:hover{
+    color: #fff;
+    transition: 1s;
+  }
+  .buttonPage:hover::after{
+    left: 0;
+   
+   
+   transition: 1s;
+   
+    cursor: pointer;
+  }
+  .buttonPagereverse:hover{
+    color:#fff;
+  }
+  .buttonPagereverse:hover::after{
+    right: 0;
+   
+   
+   transition: 1s;
+   
+    cursor: pointer;
+  }
+
 }
