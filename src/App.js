@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import useFetch from './useFetch';
 import axios from 'axios';
 import logo from './img/unsplash-logo.png'
+import Footer from './components/Footer';
 function App() {
 
   const imagesPerPage=20;
@@ -69,7 +70,7 @@ useEffect(() => {
     <div onClick={()=>handleSelection('space')}> space</div>
     <div onClick={()=>handleSelection('dreams')}>dreams</div>
     <div onClick={()=>handleSelection('cool')}>cool</div>
-    <div onClick={()=>handleSelection('hello kitty')}>hello kitty</div>
+    <div onClick={()=>handleSelection('cats')}>cats</div>
    </div>
 </div>
 
@@ -93,8 +94,11 @@ useEffect(() => {
         {
           page<totalImages&&(<button className='buttonPage' onClick={()=>setpage(page + 1 )}><span>Next</span></button>)
         }
+        
     </div>
+    <Footer/>
     </div>
+   
     </div>
   );
 }
