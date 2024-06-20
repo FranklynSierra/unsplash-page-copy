@@ -81,10 +81,11 @@
   display: flex;
   
   align-items: center;
+  justify-content: space-between;
 
 }
  .inputsearch{
-  width: 100%;
+  width: 70%;
   height: 30px;
   padding: 10px;
   border: none;
@@ -92,13 +93,27 @@
   margin: 5px ;
   background-color: #eee;
   font-size: 1.2rem;
+  
 
 }
 .inputsubmit{
   border: none;
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border-radius: 50px;
+  
+}
+.profile{
+  text-align: center;
+}
+.profile img{
+  width: 90px;
+  height: 80px;
+  border-radius:50% ;
+text-align: center;
+}
+.profile h2{
+  font-size:1.1rem;
 }
 .imagenes{
 
@@ -120,9 +135,7 @@ column-gap: 32px;
   height: 100%;
   border-radius:10px ;
   
-  animation: reveal linear both;
-animation-timeline:view() !important;
-animation-range: entry 1% cover 4%;
+
 
 }
 
@@ -280,20 +293,7 @@ transition: .3s ease-in-out;
   margin: 0;
  
 }
-@keyframes reveal{
-  from{
-    opacity: 0;
-    translate: 0 100px;
-    scale:.5;
-    transform: rotate(10deg);
-  }
-  to{
-    opacity: 1;
-    translate: 0 0;
-    scale: 1;
-    transform: rotate(0);
-  }
-}
+
 
 @media (max-width:900px) {
  .imagenes{
@@ -302,7 +302,19 @@ transition: .3s ease-in-out;
  .filters{
   flex-direction: column;
  }
- 
+ .search{
+  flex-direction: column;
+ }
+ .inputsubmit{
+  margin: 10px;
+ }
+ .profile img{
+  width: 155px;
+  height: 155px;
+ }
+ .profile h2{
+  font-size:1.5rem;
+}
 }
 @media(hover:hover){
   .buttonPage:hover{
