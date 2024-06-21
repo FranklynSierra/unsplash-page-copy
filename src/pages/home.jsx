@@ -5,13 +5,9 @@ import useFetch from '../useFetch';
 import axios from 'axios';
 import logo from '../img/unsplash-logo.png'
 import Footer from '../components/Footer';
-import Login from './login';
-import Profile from '../components/Profile';
-import LogoutButton from '../components/Logout';
-import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Home() {
-const {isAuthenticated}=useAuth0()
+
   const imagesPerPage=20;
 
   const searchImput = useRef(null)
@@ -68,12 +64,7 @@ useEffect(() => {
 
 <input className='inputsubmit' type="submit" value="Submit"/>
     
-      
-    {
-      isAuthenticated?(<><LogoutButton /><Profile></Profile></>)
-      :<Login />
-    }
-    
+
     
    
     
