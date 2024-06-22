@@ -11,16 +11,19 @@ const [value, setvalue] = useState('');
        e.preventDefault();
        const correo=e.target.email.value;
        const contraseña=e.target.password.value
+       
       if(registering){
         try{
             await createUserWithEmailAndPassword(auth,correo,contraseña)
         }catch(err){
-        alert('Make sure your password is more than 8 characters')
+          console.log(err)
+        alert('the email is already in use')
         }
       }else{
         try{
         await signInWithEmailAndPassword(auth,correo,contraseña)
         }catch(err){
+          console.log(err)
             alert('the email or password have errors')
         }
        
@@ -40,21 +43,21 @@ const handleClick=()=>{
             <input id='email' type='text'placeholder='Email...'className='inputsearch'/>
             <input id='password' type='password'placeholder='Password...'className='inputsearch'/>
          <div>
-            <button   className='inputsubmit'>{registering?'Register':'Log In'}</button>
+            <button   className='logInRes'>{registering?'Register':'Log In'}</button>
             </div>
         </form>
-    
-      <h4 className='accountquestion'>{registering?'if you already have an account':'You do not have an account'}<button  className='inputsubmit register' onClick={()=>setRegistering(!registering)}><span>{registering?'Log In':'Register'}</span></button></h4> 
-    
+    <div className='question'>
+      <h4 className='accountquestion'>{registering?'if you already have an account?':'You do not have an account?'}<button  className='inputsubmit register' onClick={()=>setRegistering(!registering)}><span>{registering?'Log In':'Register'}</span></button></h4> 
+      </div>
      <button className='inputsubmit google' onClick={handleClick}>
      
   
-     
-     <ion-icon className='icon'name="logo-google"></ion-icon>
-  
+    <div>
+       <ion-icon className='icon'name="logo-google"></ion-icon>
+       
      <span className='spanGoogle'>Sigin with Google</span>
     
-    
+     </div>
      </button>
      
     </div>

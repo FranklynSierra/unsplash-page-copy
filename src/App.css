@@ -18,7 +18,7 @@
   background-color: #262626;
   width: 100%;
   scale: 0 1;
-  transform-origin: left;
+  
   animation: scroll-watcher linear;
   animation-timeline: scroll(block) !important;
 }
@@ -140,7 +140,10 @@
   cursor: pointer;
 
 }
-
+.correoUsuario{
+  color: #160f0f;
+  font-size: 1.4rem;
+}
 .imagenes {
 
   columns: 3;
@@ -164,7 +167,11 @@
 
 
 }
+.logout{
+  background-color: red;
+  color: #fff;
 
+}
 .buttonDowload {
 
   text-align: center;
@@ -268,7 +275,41 @@
   border-right: 70px solid transparent;
   transition: .3s ease-in-out;
 }
+.buttonPage:hover {
+  color: #fff;
+  transition: 1s;
+}
 
+.buttonPage:hover::after {
+  top: 0;
+}
+
+
+.register:hover::after {
+  transform: scale(400);
+  background: #fea510;
+  transition: 2s;
+  color: #fff;
+}
+
+.buttonPagereverse:hover {
+  color: #fff;
+}
+
+.buttonPagereverse:hover::after {
+  right: 0;
+
+
+  transition: 1s;
+
+  cursor: pointer;
+}
+.buttonPage:hover::after{
+  left: 0;
+
+
+  transition: 1s;
+}
 /* .buttonPage:active{
   
   border-radius: 50px;
@@ -279,12 +320,20 @@
 
 } */
 
+.google{
+  background-color:#0e57e5;
+  color: #fff;
+}
+
 
 .spanGoogle{
  margin: 10px;
 
  }
-
+.google:hover{
+  background: #008645;
+  transition: 1s;
+}
 
 .footer {
   background: #262626;
@@ -363,6 +412,39 @@
 
 }
 
+.logInRes{
+  text-decoration: none;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 32px;
+  border: none;
+  background: transparent;
+}
+
+.logInRes::after, .logInRes::before{
+  border: 3px solid #039be5;
+  content: "";
+position: absolute;
+  width: calc(100% );
+  height: calc(100% );
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.logInRes:hover::after{
+  transform: translate(-7px, -7px);
+}
+
+.logInRes::before{
+  transform: translate(1px, 1px);
+}
+
+.question{
+  text-align: center;
+}
 .accountquestion {
   font-size: 1.1rem;
   color: gray;
@@ -435,35 +517,7 @@ background:none;
 }
 
 @media(hover:hover) {
-  .buttonPage:hover {
-    color: #fff;
-    transition: 1s;
-  }
-
-  .buttonPage:hover::after {
-    top: 0;
-  }
-
-
-  .register:hover::after {
-    transform: scale(400);
-    background: #f00;
-    transition: 2s;
-    color: #fff;
-  }
-
-  .buttonPagereverse:hover {
-    color: #fff;
-  }
-
-  .buttonPagereverse:hover::after {
-    right: 0;
-
-
-    transition: 1s;
-
-    cursor: pointer;
-  }
+ 
 
   .redes li a:hover {
     transform: translateY(-10px);

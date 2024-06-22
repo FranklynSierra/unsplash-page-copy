@@ -69,8 +69,8 @@ useEffect(() => {
 
 <input className='inputsubmit' type="submit" value="Submit"/>
 
-<button className='inputsubmit'  onClick={()=>signOut(auth)}>Logout</button>
-<h2>{correoUsuario}</h2>
+<button className='inputsubmit logout'  onClick={()=>signOut(auth)}>Logout</button>
+<h2 className='correoUsuario'>{correoUsuario}</h2>
    
     
     </form>
