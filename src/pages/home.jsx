@@ -5,8 +5,11 @@ import useFetch from '../useFetch';
 import axios from 'axios';
 import logo from '../img/unsplash-logo.png'
 import Footer from '../components/Footer';
+import appFirebase from '../Credential';
+import { getAuth,signOut } from 'firebase/auth';
+const auth=getAuth(appFirebase)
 
-export default function Home() {
+export default function Home({correoUsuario}) {
 
   const imagesPerPage=20;
 
@@ -34,16 +37,18 @@ const {image,setImage,loading,error}=useFetch(`https://api.unsplash.com/photos?p
  const handleSearch = (e) => {
   e.preventDefault();
   resetSearch()
+ 
 
 }
 const handleSelection=(e)=>{
 searchImput.current.value=e;
 resetSearch()
+
 }
 
 useEffect(() => {
   fetchImages();
-  
+
 }, [page]);
 
   return (
@@ -63,13 +68,13 @@ useEffect(() => {
       />
 
 <input className='inputsubmit' type="submit" value="Submit"/>
-    
 
-    
+<button className='inputsubmit'  onClick={()=>signOut(auth)}>Logout</button>
+<h2>{correoUsuario}</h2>
    
     
     </form>
-   
+  
     </div>
     <div className='filters'>
     <div onClick={()=>handleSelection('Cakes')}>Cakes</div>
